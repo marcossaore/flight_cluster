@@ -1,0 +1,6 @@
+{
+    "phpunit.command": "docker-compose run --rm phpunit",  // Skip to select from running containers
+    "phpunit.paths": {
+        "${workspaceFolder}": "/var/www"                // Map your ${workspaceFolder} to where it
+    }                                               // is in your container. Ex: /app
+}

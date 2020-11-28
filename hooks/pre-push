@@ -1,0 +1,10 @@
+#!/bin/bash
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+
+echo pushing as $(git config user.name)
+
+docker-compose run --rm phpunit vendor/bin/phpunit
+
+
+

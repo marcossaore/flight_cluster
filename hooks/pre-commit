@@ -1,0 +1,16 @@
+#!/bin/bash
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
+
+echo committing as $(git config user.name)
+
+FIXER_EXECUTE=$(docker-compose exec -T app php artisan php-cs-fixer:fix)
+
+if [ "$FIXER_EXECUTE" = 1 ]
+then
+    echo -e "${RED} CS Fixer cannot be executed! ${NC}"
+	exit 1
+fi
+
+echo -e "${GREEN} CS Fixer executed with success! ${NC}"
