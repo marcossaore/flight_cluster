@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "EditorConfig.EditorConfig",
+        "felixfbecker.php-intellisense",
+        "danilopolani.yet-another-phpunit",
+        "emallin.phpunit",
+        "onecentlin.laravel5-snippets"
+    ]
+}
