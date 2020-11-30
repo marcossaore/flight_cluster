@@ -6,17 +6,14 @@
 
 ### Tabela de conteúdos
    * [Instalação](#Instalação)
-      * [Pre Requisitos](#Pré-requisitos)
-      * [Local files](#local-files)
-      * [Remote files](#remote-files)
-      * [Multiple files](#multiple-files)
-      * [Combo](#combo)
-   * [Tests](#testes)
-   * [Tecnologias](#tecnologias)
-
+   * [Informações Importantes](#Informações-Importantes)
+   * [Features](#Features)
+   * [Tecnologias Utilizadas](#Tecnologias-Utilizadas)
+   * [Github Actions e Heroku](#Github-Actions-e-Heroku)
+   * [Autor][#Autor]
 <br/>
 
- # Instalação  
+# Instalação  
 
 ## Pré-requisitos
 
@@ -40,38 +37,43 @@ $ docker-compose exec app composer install
 
 # O servidor iniciará  - acesse <http://localhost/api/flights>
 ```
+</br>
 
-## Informações Importantes
+# Informações Importantes
 
-O docker compose está configurada `app`, `nginx`, `githook_installer` e `phpunit`
+**O docker compose está configurado para os serviços `app`, `nginx`, `githook_installer` e `phpunit`.**
 
-app: É o serviço que corresponde a aplicação laravel.
+1. app: É o serviço que corresponde a aplicação laravel.
 
-nginx: É o serviço responsável em ser o servidor do serviço `app`
+2. nginx: É o serviço responsável em ser o servidor do serviço `app`
 
-githook_installer: É um hack para utilizar o docker-compose nos eventos do [Git Hooks]()
-você pode ver mais sobre aqui.
+3. githook_installer: É um hack que cria um link simbólico para utilizar o docker-compose nos eventos do [Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) você pode ver mais sobre [aqui](https://hackernoon.com/using-git-hooks-in-a-dockerized-environment-55372c40815f).
 
-phpunit: É o serviço encarregado de executar o PHPUnit.
+4. phpunit: É o serviço encarregado de executar o PHPUnit.
 
-Se você estiver usando o VSCode, para facilitar a nossa vida de desenvolvedor
-em [settings.json](./.vscode/settings.json) há uma configuração feita para o plugin 
-[PHPUnit](https://marketplace.visualstudio.com/items?itemName=emallin.phpunit) 
-e executa-o no container `phpunit`.
+> Se você estiver usando o VSCode, para facilitar a nossa vida de desenvolvedor em [settings.json](./.vscode/settings.json) há uma configuração feita para o plugin [PHPUnit](https://marketplace.visualstudio.com/items?itemName=emallin.phpunit) e executa-o no container `phpunit`. Além disso, há uma lista de plugins recomendados em [extensions.json](./.vscode/extensions.json) que usei ao desenvolver este projeto. Assim que abrir o projeto no VSCode você será questionado se deseja instalar os plugins recomendados, caso não apareça, Clique no ícone de
+`extensions` no `menu lateral`.  
 
-Além disso, há uma lista de plugins recomendados em [extensions.json](./.vscode/extensions.json) que usei ao desenvolver este projeto.
-Assim que abrir o projeto no VSCode você será questionado se deseja instalar os plugins recomendados, caso não apareça, Clique no ícone de `extensions` no `menu lateral`.  
+<br/>
 
-### Features
+# Features
 
 - [x] Voos Agrupados por ida e volta
 
+<br/>
 
-## Tecnologias Utilizadas
+# Tecnologias Utilizadas
 
 - [Laravel](https://laravel.com/)
 - [Docker](https://www.docker.com/)
 
+<br/>
+
+# Github Actions e Heroku
+
+o projeto possui deploy automatizado com o Github Actions e Heroku e pode ser testada [aqui](https://flightcluster.herokuapp.com/api/flights).
+
+<br/>
 
 ### Autor
 ---
