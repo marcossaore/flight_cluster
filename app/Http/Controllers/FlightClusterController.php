@@ -10,22 +10,18 @@ class FlightClusterController extends Controller
     private const FARE_1AF = '1AF';
     private const FARE_4DA = '4DA';
 
-    private $flights;
-
     public function groupFlights()
     {
         try {
-            $this->flights = (FlightModel::getFlights())->data;
+            $flights = (FlightModel::getFlights())->data;
 
-            return $this->flights;
-
-            if (! $this->flights) {
+            if (!$flights) {
                 throw new Exception('Não há voos disponíveis!');
             }
 
-            $flightsType1AF = $this->groupFlightWithFarePriceAndTypeFlight($this->flights, self::FARE_1AF);
+            $flightsType1AF = $this->groupFlightWithFarePriceAndTypeFlight($flights, self::FARE_1AF);
 
-            $flightsType4DA = $this->groupFlightWithFarePriceAndTypeFlight($this->flights, self::FARE_4DA);
+            $flightsType4DA = $this->groupFlightWithFarePriceAndTypeFlight($flights, self::FARE_4DA);
 
             if (! $flightsType1AF && $flightsType4DA) {
                 throw new Exception('Não há voos disponíveis com as tarifas associadas ');
