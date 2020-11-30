@@ -49,6 +49,9 @@ $ docker-compose exec app composer install
 
 3. githook_installer: É um hack que cria um link simbólico para utilizar o docker-compose nos eventos do [Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) você pode ver mais sobre [aqui](https://hackernoon.com/using-git-hooks-in-a-dockerized-environment-55372c40815f).
 
+    * pre-commit: executa o `php-cs-fixer`.
+    * pre-push: executa os testes unitários.
+
 4. phpunit: É o serviço encarregado de executar o PHPUnit.
 
 > Se você estiver usando o VSCode, para facilitar a nossa vida de desenvolvedor em [settings.json](./.vscode/settings.json) há uma configuração feita para o plugin [PHPUnit](https://marketplace.visualstudio.com/items?itemName=emallin.phpunit) e executa-o no container `phpunit`. Além disso, há uma lista de plugins recomendados em [extensions.json](./.vscode/extensions.json) que usei ao desenvolver este projeto. Assim que abrir o projeto no VSCode você será questionado se deseja instalar os plugins recomendados, caso não apareça, Clique no ícone de
