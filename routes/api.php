@@ -5,5 +5,5 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FlightClusterController;
 
 Route::get('flights', function (Request $request) {
-    return FlightClusterController::index();
+    return (new FlightClusterController)->groupFlights();
 });
